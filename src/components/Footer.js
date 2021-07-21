@@ -69,7 +69,6 @@ const Footer = () => {
 						</Col>
 						<Col md={4}  >
 							
-
 						</Col>
 					</Row>
 					<Row bottom="xs" end="md" style={{ 'height': '100%' }}>
@@ -77,8 +76,6 @@ const Footer = () => {
 								<h5>2021 © Helau Solutions Oy – All rights reserved</h5>
 								</Col>
 							</Row>
-
-
 					{/* <Markdown source={context.footerContent.body} /> */}
 					<SocialButtons>
 						{/* <Social /> */}
