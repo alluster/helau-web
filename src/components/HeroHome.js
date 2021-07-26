@@ -17,35 +17,36 @@ const HeroStyled = styled.div`
 
 `;
 
-const HeroContent = styled.div`
+const HeroContent = styled.div `
+	padding-top: 50px;
+	padding-bottom: 50px;
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	z-index: 999;
-	align-items: middle;
-	height: 100%
+	max-width: 70%;
+	justify-content: center;
+
+	height: 100%;
 	@media ${device.laptop} {
-		flex-direction: column;
-		display: inline-block;
+		max-width: 100%;
+
     }
 `;
 
 
 const TextContainer = styled.div `
 	display: flex;
+	justify-content: center;
 	text-align: left;
 	flex-direction: column;
 	justify-content: center;
-	max-width: 100%;
-	align-self: flex-end;
 	line-break: normal;
 	align-items: center;
 
 	@media ${device.laptop} {
 		flex: 1;
 		justify-content: center;
-		height: 100%;
-		padding-top: 40px;
 
 	}	
 	`;
@@ -87,10 +88,10 @@ const Ingress = styled.p `
 const HeroHome = ({title, ingress, image, children }) => {
     return(
         <HeroStyled >
-			<Container>
+				<Container>
 
 					<HeroContent>
-					
+						
 						<TextContainer>
 							<Title>
 							<h5>Ajatella - tehdä - tarkkailla</h5>
@@ -106,9 +107,9 @@ const HeroHome = ({title, ingress, image, children }) => {
 						</TextContainer>
 			
 					</HeroContent>
+					</Container>
 
 				
-				</Container>
 				{/* <Overlay themeColor="Brand" /> */}
         </HeroStyled>
 		

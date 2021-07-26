@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import styled  from 'styled-components';
+import styled from 'styled-components';
 import Container from './Container';
 import { Row, Col } from 'react-flexbox-grid';
 import Button from './Button'
@@ -35,7 +35,7 @@ const Icon = styled(FontAwesomeIcon)`
 `;
 
 
-const ImageContainer = styled.div `
+const ImageContainer = styled.div`
 	height: 160px;
 	text-align: left;
 	align-items: center;
@@ -50,7 +50,7 @@ const ImageContainer = styled.div `
 `
 
 const OpenNav = styled.div`
-	top: 0;
+	top: 160px;
 	min-height: 100vh;
 	background: rgba(255, 255, 255, 0.98);
 	text-align: center;
@@ -66,8 +66,8 @@ const OpenNav = styled.div`
 
 `;
 
-const LinkText = styled.h2 `
-	margin-top: 10px;
+const LinkTextMobile = styled.h2`
+	margin-top: 20px;
 	margin-bottom: 10px;
 	color: black !important;
 
@@ -91,10 +91,13 @@ const BurgerContent = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+	:hover {
+		cursor: pointer;
+	}
 `;
 
 
-const LinkContainer = styled.div `
+const LinkContainer = styled.div`
 	 height: 160px;
 	 padding-left: 20px;
 	 display: flex;
@@ -104,6 +107,12 @@ const LinkContainer = styled.div `
 		display: none;
  	}
 `;
+const LinkText = styled.h5`
+	 margin-top: 34px;
+	 :hover {
+		 cursor: pointer;
+	 }
+`;
 
 
 const Navigation = ({ className }) => {
@@ -112,85 +121,93 @@ const Navigation = ({ className }) => {
 
 
 
-    return(
+	return (
 		<>
-		<NavContainer className={className} >
-			<Container>
-				<Row>
-					<Col xs={4}>
-						{
-							navOpen ? 
-						
-								""
-								: 
-								
+			<NavContainer className={className} >
+				<Container>
+					<Row>
+						<Col xs={4}>
+
+							<CustomLink to="/" >
+								<ImageContainer>
+									<StaticImage src={logo} height={30} width={123} quality={100}
+									/>
+								</ImageContainer>
+							</CustomLink>
+
+
+						</Col>
+						<Col xs={2}>
+							<LinkContainer>
+								<LinkText>Työt</LinkText>
+							</LinkContainer>
+						</Col>
+						<Col xs={2}>
+							<LinkContainer>
+								<LinkText>Meistä</LinkText>
+							</LinkContainer>
+						</Col>
+						<Col xs={2}>
+							<LinkContainer>
+								<LinkText>Yhteystiedot</LinkText>
+							</LinkContainer>
+						</Col>
+						<Col xs={2}>
+
+							<BurgerContainer  >
+
+								{
+									!navOpen ?
+										<BurgerContent onClick={e => setNavOpen(true)} >
+
+											<Icon icon={faBars} style={{ color: "black" }} />
+											<LinkText>Menu</LinkText>
+										</BurgerContent>
+
+										:
+										<BurgerContent onClick={e => setNavOpen(false)}>
+
+											<Icon icon={faTimes} style={{ color: "black", zIndex: 10000 }} />
+											<LinkText>Menu</LinkText>
+										</BurgerContent>
+
+
+
+								}
+
+
+
+
+							</BurgerContainer>
+						</Col>
+
+
+
+					</Row>
+				</Container>
+
+			</NavContainer>
+			{
+				navOpen ?
+					<OpenNav>
+						<Container>
+							<LinkTextMobile onClick={() => setNavOpen(false)} >
 								<CustomLink to="/" >
-									<ImageContainer>
-										<StaticImage src={logo}       layout="fixed" height={30} width={123} quality={100}
-/>
-									</ImageContainer>
-								</CustomLink>                
-				
-						}
-					</Col>
-					<Col xs={2}>
-						<LinkContainer>
-							<h5>Our Services</h5>
-						</LinkContainer>
-					</Col>
-					<Col xs={2}>
-						<LinkContainer>
-							<h5>About</h5>
-						</LinkContainer>
-					</Col>
-					<Col xs={2}>
-						<LinkContainer>
-							<h5>Careers</h5>
-						</LinkContainer>
-					</Col>
-					<Col xs={2}>
-
-					<BurgerContainer  > 
-						<BurgerContent>
-
-						{
-							!navOpen ? 
-							
-							<Icon   onClick={e => setNavOpen(true)} icon={faBars} style={{color: "black"}}/>
-							: 
-							<Icon  onClick={e => setNavOpen(false)} icon={faTimes} style={{color: "black"}}/>
-
-
-						}
-													<h5>Menu</h5>
-
-													</BurgerContent>
-
-
-						</BurgerContainer>	
-					</Col>
-
-
-						
-				</Row>
-			</Container>
-
-		</NavContainer>        
-					{
-						navOpen ? 
-						<OpenNav>
-							<Container>
-								<LinkText onClick={() => setNavOpen(false)} >		
-									<CustomLink to="/" >
-										Home
+									Työt
 									</CustomLink>
-								</LinkText>
-								<LinkText onClick={() => setNavOpen(false)} >		
-									<CustomLink to="/about">
-										About
+							</LinkTextMobile>
+							<LinkTextMobile onClick={() => setNavOpen(false)} >
+								<CustomLink to="/about">
+									Meistä
 									</CustomLink>
-								</LinkText>
-								{/* {
+							</LinkTextMobile>
+							<LinkTextMobile onClick={() => setNavOpen(false)} >
+								<CustomLink to="/about">
+									Yhteystiedot
+									</CustomLink>
+							</LinkTextMobile>
+
+							{/* {
 									context.pages.map((item, i) => {
 										return (
 											item.fields.name !== context.t('navigation.landing-page') ?
@@ -208,15 +225,15 @@ const Navigation = ({ className }) => {
 	
 											)
 										} */}
-					
-								
-							</Container>
-						</OpenNav>
-						: 
-						<></>
-					}
-					</>
-    );
+
+
+						</Container>
+					</OpenNav>
+					:
+					<></>
+			}
+		</>
+	);
 };
 
 

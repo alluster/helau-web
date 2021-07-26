@@ -17,14 +17,15 @@ const GlobalStyle = createGlobalStyle`
 		color: ${props => props.theme.colors.black};
 		hyphens: manual;
 		text-rendering: optimizeLegibility;
-		background-color: ${props => props.theme.colors.background}
-		
+		background-color: ${props => props.theme.colors.background};
+		overflow-x: hidden;
+
 	}
     
     h1 {
 		font-size: 90.4px;
-		line-height: 112px
-        margin: 0px;
+		line-height: 112px;
+        margin-top: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 28.8px;
@@ -33,8 +34,8 @@ const GlobalStyle = createGlobalStyle`
     }
     h2 {
 		font-size: 63.96px;
-		line-height: 80px
-        margin: 0px;
+		line-height: 80px;
+        margin-top: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 25.63px;
@@ -43,8 +44,8 @@ const GlobalStyle = createGlobalStyle`
     }
     h3 {
 		font-size: 45.23px;
-		line-height: 48px
-        margin: 0px;
+		line-height: 48px;
+        margin-top: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 22.78px;
@@ -53,8 +54,8 @@ const GlobalStyle = createGlobalStyle`
     }
     h4 {
 		font-size: 31.99px;
-		line-height: 40px
-        margin: 0px;
+		line-height: 40px;
+        margin-top: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 20.25px;
@@ -63,8 +64,8 @@ const GlobalStyle = createGlobalStyle`
     }
     h5 {
 		font-size: 22.62px;
-		line-height: 24px
-        margin: 0px;
+		line-height: 24px;
+        margin-top: 16px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 18px;
@@ -73,8 +74,8 @@ const GlobalStyle = createGlobalStyle`
     }
     h6 {
 		font-size: 16px;
-		line-height: 24px
-        margin: 0px;
+		line-height: 24px;
+        margin-top: 16px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 16px;
@@ -83,8 +84,8 @@ const GlobalStyle = createGlobalStyle`
 	}
 	p {
 		font-size: 16px;
-		line-height: 24px
-        margin: 0px;
+		line-height: 24px;
+        margin-top: 16px;
 		font-weight: 400;
 		@media ${device.tablet} {
 			font-size: 16px;

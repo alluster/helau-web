@@ -8,36 +8,36 @@ import { Row, Col } from 'react-flexbox-grid';
 const Footer = () => {
 
 	const FooterContent = styled.div`
-    width: 100%;
-	margin-top: auto;
-	padding-top: 30px;
-	padding-bottom: 20px;
-	background-color: ${props => props.theme.colors.blue};
-    @media ${device.laptop} {
-		bottom: 0;
-		align-items: center;
+		width: 100%;
+		margin-top: 300px;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		background-color: ${props => props.theme.colors.blue};
+		@media ${device.laptop} {
+			bottom: 0;
+			align-items: center;
 
-    }
+		}
 `;
 
 
 
 
 	const Content = styled.div`
-	margin-top: 50px;
-	margin-bottom: 50px;
-	color: ${props => props.theme.colors.yellow};
-	@media ${device.laptop} {
-		text-align: center;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		color: ${props => props.theme.colors.yellow};
+		@media ${device.laptop} {
+			text-align: center;
 
 
-    }
+		}
 
 `;
 
 	const SocialButtons = styled.div`
-	margin-top: 30px;
-`;
+		margin-top: 30px;
+	`;
 
 
 
@@ -51,7 +51,7 @@ const Footer = () => {
 			<Container>
 				<Content>
 					<Row>
-						<Col md={3} style={{'marginTop': '20px'}}>
+						<Col md={3} style={{ 'marginTop': '20px' }}>
 							<h5>Osoitetiedot</h5>
 							<p>Helau Solutions Oy </p>
 							<p>Ristolantie 4  1krs</p>
@@ -68,14 +68,14 @@ const Footer = () => {
 
 						</Col>
 						<Col md={4}  >
-							
+
 						</Col>
 					</Row>
 					<Row bottom="xs" end="md" style={{ 'height': '100%' }}>
-								<Col xs={12}>
-								<h5>2021 © Helau Solutions Oy – All rights reserved</h5>
-								</Col>
-							</Row>
+						<Col xs={12}>
+							<h5>2021 © Helau Solutions Oy – All rights reserved</h5>
+						</Col>
+					</Row>
 					{/* <Markdown source={context.footerContent.body} /> */}
 					<SocialButtons>
 						{/* <Social /> */}

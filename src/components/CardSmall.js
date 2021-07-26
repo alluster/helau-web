@@ -5,55 +5,50 @@ import { Link, GatsbyImage } from "gatsby";
 import { device } from '../device';
 
 const CardContainer = styled(Link)`
-		flex: 0 1 32.5%;
-		display: flex;
-		flex-direction: column;
-		background-color: ${props => props.theme.colors.red};
-		margin: 15px;
-		@media ${device.laptopL} {
-			flex: 0 1 100%;
-		}
-	`;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-width: 300px;
+	flex: 2;
+	background-color: ${props => props.theme.colors.white};
+	margin: 15px;
+	
+`;
 
 const CardImageContainer = styled.img`
+	height: 300px;
 	background-color: green;
-	object-fit: cover;
-	flex: 2;
-	@media ${device.laptop} {
-		height: 100px;
-	}
+	object-fit: cover !important;
+	
 
 `;
 
 
 const CardContent = styled.div`
-	flex: 1;
-	height: 100%;
+
 
 `;
 
 const CardTextContainer = styled.div`
-	padding: 20px;
 	
 
 `;
 
-const LeadingText = styled.h5`
-	color: ${props => props.theme.colors.white};
+const LeadingText = styled.p`
+	margin-top: 24px;
+	color: ${props => props.theme.colors.black};
 
 `;
 
-const Title = styled.h3`
-	color: ${props => props.theme.colors.white};
+const Title = styled.h5`
+	margin-top: 24px;
+	color: ${props => props.theme.colors.black};
 
 `;
 
-const CardBig = (props) => {
+const CardSmall = (props) => {
 	return (
-		
-		<CardContainer  to={`/article/${props.id}`}>
-				
-
+		<CardContainer  to={`/article/${props.slug}`}>
 			<CardImageContainer src={props.image} >
 			
 			</CardImageContainer>
@@ -67,11 +62,10 @@ const CardBig = (props) => {
 					</Title>
 				</CardTextContainer>
 			</CardContent>
-
 		</CardContainer>
 
 	);
 };
 
 
-export default CardBig;
+export default CardSmall;

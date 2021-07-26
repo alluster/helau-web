@@ -10,7 +10,7 @@ const theme = {
 		brandDark: '#240237',
 		secondary: '#F5A623',
 		secondaryDark: '#E69000',
-		background: '#f1f4f6',
+		background: '#ffffff',
 		backgroundDark: '#E9EFF3',
 		linkGray: '#C8CCD4',
 		lightGray: '#F0F0F0'

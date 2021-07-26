@@ -1,4 +1,10 @@
-module.exports = {
+
+
+require("dotenv").config({
+	path: `.env.${process.env.NODE_ENV}`,
+  })
+  
+  module.exports = {
   siteMetadata: {
 	title: "helau-web-gatsby",
 	siteUrl: "https://helau.io/"
@@ -7,8 +13,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "u6VwRMHjy0mGGbX9R9c6E14hnhzGfyeUaXlcJHS1jUg",
-        spaceId: "uypuqbs1fp4y",
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     "gatsby-plugin-styled-components",
