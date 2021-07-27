@@ -8,8 +8,7 @@ require("dotenv").config({
 	siteMetadata: {
 		title: "Severus Snape",
 		titleTemplate: "%s · The Real Hero",
-		description:
-		  "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+		description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
 		url: process.env.SITE_URL, // No trailing slash allowed!
 		image: "/images/logo-dark.png", // Path to your image you placed in the 'static' folder
 		twitterUsername: "@occlumency",
