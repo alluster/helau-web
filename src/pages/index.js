@@ -1,12 +1,12 @@
-import * as React from "react"
-import Layout from '../components/Layout'
-import HeroHome from '../components/HeroHome'
+import * as React from "react";
+import Layout from '../components/Layout';
+import HeroHome from '../components/HeroHome';
 import CardBig from '../components/CardBig';
-import { Link, graphql } from 'gatsby'
-import Container from "../components/Container"
+import { Link, graphql } from 'gatsby';
+import Container from "../components/Container";
 import styled from "styled-components";
 import CardSmall from "../components/CardSmall";
-
+import SEO from '../components/seo';
 
 const CardGrid = styled.div`
 	display: flex;
@@ -32,6 +32,8 @@ const CardGridColumn = styled.div`
 const IndexPage = ({ data }) => {
 	return (
 		<Layout >
+			<SEO />
+
 			<HeroHome />
 			<Container>
 				<CardGrid>

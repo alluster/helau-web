@@ -5,10 +5,15 @@ require("dotenv").config({
   })
   
   module.exports = {
-  siteMetadata: {
-	title: "helau-web-gatsby",
-	siteUrl: "https://helau.io/"
-  },
+	siteMetadata: {
+		title: "Severus Snape",
+		titleTemplate: "%s · The Real Hero",
+		description:
+		  "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+		url: "https://www.helau.io", // No trailing slash allowed!
+		image: "/images/logo-dar.png", // Path to your image you placed in the 'static' folder
+		twitterUsername: "@occlumency",
+	  },
   plugins: [
     {
       resolve: "gatsby-source-contentful",
