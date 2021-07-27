@@ -11,7 +11,7 @@ require("dotenv").config({
 		description:
 		  "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
 		url: "https://www.helau.io", // No trailing slash allowed!
-		image: "/images/logo-dar.png", // Path to your image you placed in the 'static' folder
+		image: "/images/logo-dark.png", // Path to your image you placed in the 'static' folder
 		twitterUsername: "@occlumency",
 	  },
   plugins: [
