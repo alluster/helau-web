@@ -12,7 +12,7 @@ const Article = ({ data }) => {
 }
 export default Article
 
-export const query = graphql`query ($slug: String!) {
+export const query = graphql`query ($slug: String) {
 	
     contentfulArticle(slug: { eq: $slug }) {
 		id
