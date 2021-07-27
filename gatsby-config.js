@@ -10,7 +10,7 @@ require("dotenv").config({
 		titleTemplate: "%s · The Real Hero",
 		description:
 		  "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
-		url: "https://www.helau.io", // No trailing slash allowed!
+		url: process.env.SITE_URL, // No trailing slash allowed!
 		image: "/images/logo-dark.png", // Path to your image you placed in the 'static' folder
 		twitterUsername: "@occlumency",
 	  },
