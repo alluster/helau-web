@@ -20,13 +20,12 @@ const SEO = ({ title, description, image, article }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl || ""}${pathname}`,
+    image: `https://helauwebmain.gatsbyjs.io${image || defaultImage}`,
+    url: "https://helauwebmain.gatsbyjs.io",
   }
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
-		{console.log(siteUrl)}
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
