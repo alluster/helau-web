@@ -32,7 +32,7 @@ const CardGridColumn = styled.div`
 const IndexPage = ({ data }) => {
 	return (
 		<Layout >
-			<SEO title="Hello" description="World" image="/images/logo-dark-png" article="true"/>
+			<SEO title="Hello" description="World" image="/seo.jpeg" article="true"/>
 
 			<HeroHome />
 			<Container>
