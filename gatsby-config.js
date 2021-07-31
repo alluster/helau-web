@@ -10,7 +10,7 @@ require("dotenv").config({
 		titleTemplate: "%s · The Real Hero",
 		description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
 		siteUrl: process.env.SITE_URL, // No trailing slash allowed!
-		image: "/seo.jpeg", // Path to your image you placed in the 'static' folder
+		image: `${process.env.SITE_URL}/seo.jpeg`, // Path to your image you placed in the 'static' folder
 		twitterUsername: "@occlumency",
 	  },
   plugins: [
