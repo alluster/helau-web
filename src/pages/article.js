@@ -4,10 +4,13 @@ import SEO from '../components/seo';
 
 const Article = ({ data }) => {
 	return (
-
 		<main>
-						<SEO title={data.contentfulArticle.title} description="World" image={data.contentfulArticle.image.file.url} article="true"/>
-
+			<SEO 
+				title={data.contentfulArticle.title} 
+				description={data.contentfulArticle.description}  
+				image={data.contentfulArticle.image.file.url} 
+				article="true"
+			/>
 			<h1>{data.contentfulArticle.title}</h1>
 			<p>I'm making this by following the Gatsby Tutorial.</p>
 		</main>
