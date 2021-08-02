@@ -5,14 +5,12 @@ import { device } from '../device';
 
 
 const AuthorCard = ({ image, name, email, description }) => {
-	const CardContainer = styled.div `
-		width: 280px;
+	const CardContainer = styled.div`
+		display: flex;
+		flex-direction: row;
 		font-family: 'Open Sans'
-		height: 300px;
 		margin-right: 10px;
-		margin-top: 10px
-		border-radius: 5px;
-		
+		margin-top: 10px		
 		@media ${device.laptop} {
 			width: 100%;
 		}
@@ -20,57 +18,40 @@ const AuthorCard = ({ image, name, email, description }) => {
 `;
 
 	const CardContent = styled.div`
-		display: flex;
-		flex-direction: column;
-		min-height: 100px;
-		border-radius: 0px 0px 5px 5px;
-		padding: 15px 15px 15px 0px;
-			
+		align-self: center;
 	`;
-	const ImageContainer = styled.div`
-		
+
+	const ImageContainer = styled.img`
+		height: 100px;
+		width: 100px;
+		border-radius: 50%;
 		background-repeat: no-repeat;
-		background-size: cover;
-
-	`;
-
-	const Image = styled.img`
-		height: 200px;
-		width: 200px
-		border-radius: 100px;
 		object-fit: cover;
-		object-position: 50% 0%
-
-
+		align-self: center;
+		margin-right: 32px;
 	`;
 
-    return(
-			<CardContainer>
-				<ImageContainer>
-					<Image src={image} />
-				</ImageContainer>
-				<CardContent>
-					<h2 style={{ 
-							fontSize: "24px", 
-							fontWeight: "600"}}>
-						{name}
-					</h2>
-				
-					<h2 
-					style={{ 
-							fontSize: "14px", 
-							marginTop: "10px",
-							fontWeight: "600"}}
-							
-					>
-						{email}
-					</h2>
-					<p>{description}</p>
-					
-				</CardContent>
 
-			</CardContainer>
-    );
+	return (
+		<CardContainer>
+			{
+				image ? <ImageContainer src={image} /> : null
+			}
+
+			<CardContent>
+				<h5 style={{ marginBottom: "0px" }}>
+					{name}
+				</h5>
+				<p style={{ marginTop: "8px", marginBottom: "0px" }}>
+					{description}
+				</p>
+				<p  style={{ marginTop: "8px" }}>{email && email || ""}</p>
+
+
+			</CardContent>
+
+		</CardContainer>
+	);
 };
 
 

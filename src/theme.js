@@ -3,6 +3,7 @@ const theme = {
 		blue: '#0036FF', 
 		yellow: '#FFEA00', 
 		red: '#D50001', 
+		orange: "#CF5700",
 		primaryDark: '#001F87',
         black: '#212121',
         white: '#fff',

@@ -1,24 +1,14 @@
 import * as React from "react";
 import Layout from '../components/Layout';
 import HeroHome from '../components/HeroHome';
-import CardBig from '../components/CardBig';
 import { Link, graphql } from 'gatsby';
 import Container from "../components/Container";
 import styled from "styled-components";
-import CardSmall from "../components/CardSmall";
 import SEO from '../components/seo';
+import ContactForm from "../components/ContactForm";
+import CardGrid from "../components/CardGrid";
 
-const CardGrid = styled.div`
-	display: flex;
-	flex-wrap: no-wrap;
-	min-width: 100%;
-	justify-content: space-between;
-	flex-direction: row;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	overflow-x: auto;
 
-`;
 const CardGridColumn = styled.div`
 	display: flex;
 	flex-wrap: wrap;
@@ -36,32 +26,8 @@ const IndexPage = ({ data }) => {
 
 			<HeroHome />
 			<Container>
-				<CardGrid>
+				<CardGrid content={data.allContentfulArticle.edges} />
 
-					{
-						data.allContentfulArticle.edges.map(({ node, i }) => {
-							
-								return (
-								
-									<CardSmall
-										key={i}
-										title={node.title}
-										leadingText={node.leadingText}
-										image={node.image.file.url}
-										id={node.id}
-										slug={node.slug}
-									/>
-	
-	
-								)
-							
-						
-						})
-
-					}
-					
-					
-				</CardGrid>
 				{/* <CardGrid>
 
 				{
@@ -103,7 +69,6 @@ const IndexPage = ({ data }) => {
 
 				}
 				</CardGrid> */}
-
 			</Container>
 
 		</Layout>
@@ -113,7 +78,9 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`query MyQuery {
-	allContentfulArticle {
+	allContentfulArticle
+	(filter: {tags: {eq: "article"}})
+	{
 		edges {
 			node {
 				cardStyle
@@ -139,4 +106,13 @@ export const query = graphql`query MyQuery {
 				}
 			}
 		}
+		contentfulAuthor(contentful_id: {eq: "XTQ8ZZ7WYZR89yVvWcOT9"}) {
+			personEmail
+			personDesxription
+			personImage {
+			  file {
+				url
+			  }
+			}
+		  }
 	}`

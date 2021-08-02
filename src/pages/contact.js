@@ -52,7 +52,7 @@ const Markdown = styled.div`
 
 
 
-const About = ({ data }) => {
+const Contact = ({ data }) => {
 	return (
 		<Layout>
 			<SEO
@@ -88,10 +88,10 @@ const About = ({ data }) => {
 		</Layout>
 	)
 }
-export default About
+export default Contact
 
-export const query = graphql`query AboutQuery {
-	contentfulPage(contentful_id: {eq: "3FCoahurtrxtJrs4Wzbrn9"}) {
+export const query = graphql`query ContactQuery {
+	contentfulPage(contentful_id: {eq: "52Oaaqah9yunIQ9spofcI"}) {
 	  image {
 		file {
 		  url

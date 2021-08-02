@@ -8,6 +8,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { device } from '../device';
 import CustomLink from './CustomLink';
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from 'gatsby';
 
 const logo = '../images/logo-dark.png'
 
@@ -24,6 +25,7 @@ const NavContainer = styled.div`
 
 const Icon = styled(FontAwesomeIcon)`
 	font-size: 22px;
+
 	text-align: right;
 	margin-right: 10px;
 	color: ${props => props.theme.colors.white};
@@ -56,7 +58,6 @@ const OpenNav = styled.div`
 	text-align: center;
 	padding-top: 50px;
 	z-index: 1002;
-	position: fixed;
 	width: 100vw;
 	@media ${device.laptop} {
 		position: fixed;
@@ -97,7 +98,7 @@ const BurgerContent = styled.div`
 `;
 
 
-const LinkContainer = styled.div`
+const LinkContainer = styled(Link)`
 	 height: 160px;
 	 padding-left: 20px;
 	 display: flex;
@@ -107,8 +108,11 @@ const LinkContainer = styled.div`
 		display: none;
  	}
 `;
-const LinkText = styled.h5`
-	 margin-top: 34px;
+const LinkText = styled.div`
+	 margin-top: 0x;
+	 font-size: 24px;
+	 font-weight: 600;
+	 text-decoration: none !important;
 	 :hover {
 		 cursor: pointer;
 	 }
@@ -138,18 +142,21 @@ const Navigation = ({ className }) => {
 
 						</Col>
 						<Col xs={2}>
-							<LinkContainer>
-								<LinkText>Työt</LinkText>
+							<LinkContainer to="/work">
+									<LinkText>Työt</LinkText>
+
 							</LinkContainer>
 						</Col>
 						<Col xs={2}>
-							<LinkContainer>
-								<LinkText>Meistä</LinkText>
+							<LinkContainer style={{ textDecoration: 'none !important' }} to="/about">
+									<LinkText style={{ textDecoration: 'none' }}>Meistä</LinkText>
+
 							</LinkContainer>
 						</Col>
 						<Col xs={2}>
-							<LinkContainer>
+							<LinkContainer to="/contact">
 								<LinkText>Yhteystiedot</LinkText>
+
 							</LinkContainer>
 						</Col>
 						<Col xs={2}>
@@ -192,7 +199,7 @@ const Navigation = ({ className }) => {
 					<OpenNav>
 						<Container>
 							<LinkTextMobile onClick={() => setNavOpen(false)} >
-								<CustomLink to="/" >
+								<CustomLink to="/work" >
 									Työt
 									</CustomLink>
 							</LinkTextMobile>
@@ -202,7 +209,7 @@ const Navigation = ({ className }) => {
 									</CustomLink>
 							</LinkTextMobile>
 							<LinkTextMobile onClick={() => setNavOpen(false)} >
-								<CustomLink to="/about">
+								<CustomLink to="/contact">
 									Yhteystiedot
 									</CustomLink>
 							</LinkTextMobile>

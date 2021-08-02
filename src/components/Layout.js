@@ -25,7 +25,8 @@ const GlobalStyle = createGlobalStyle`
     h1 {
 		font-size: 90.4px;
 		line-height: 112px;
-        margin-top: 24px;
+		margin-top: 24px;
+		margin-bottom: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 28.8px;
@@ -35,7 +36,8 @@ const GlobalStyle = createGlobalStyle`
     h2 {
 		font-size: 63.96px;
 		line-height: 80px;
-        margin-top: 24px;
+		margin-top: 24px;
+		margin-bottom: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 25.63px;
@@ -45,7 +47,8 @@ const GlobalStyle = createGlobalStyle`
     h3 {
 		font-size: 45.23px;
 		line-height: 48px;
-        margin-top: 24px;
+		margin-top: 24px;
+		margin-bottom: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 22.78px;
@@ -55,7 +58,8 @@ const GlobalStyle = createGlobalStyle`
     h4 {
 		font-size: 31.99px;
 		line-height: 40px;
-        margin-top: 24px;
+		margin-top: 24px;
+		margin-bottom: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 20.25px;
@@ -65,7 +69,8 @@ const GlobalStyle = createGlobalStyle`
     h5 {
 		font-size: 22.62px;
 		line-height: 24px;
-        margin-top: 16px;
+		margin-top: 16px;
+		margin-bottom: 16px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 18px;
@@ -75,7 +80,8 @@ const GlobalStyle = createGlobalStyle`
     h6 {
 		font-size: 16px;
 		line-height: 24px;
-        margin-top: 16px;
+		margin-top: 16px;
+		margin-bottom: 16px;
 		font-weight: 600;
 		@media ${device.tablet} {
 			font-size: 16px;
@@ -85,7 +91,8 @@ const GlobalStyle = createGlobalStyle`
 	p {
 		font-size: 16px;
 		line-height: 24px;
-        margin-top: 16px;
+		margin-top: 16px;
+		margin-bottom: 16px;
 		font-weight: 400;
 		@media ${device.tablet} {
 			font-size: 16px;
@@ -96,26 +103,26 @@ const GlobalStyle = createGlobalStyle`
         max-width: 100%;
     }
     a {
-		text-decoration: none;
+		text-decoration: none !important;
     }
     a:link {
-		text-decoration: none;
+		text-decoration: none !important;
 		::-webkit-any-link {
-			text-decoration: none;
+			text-decoration: none !important;
 		}
     }
     a:focus {
-		text-decoration: none;
+		text-decoration: none !important;
     }
     a:active {
-		text-decoration: none;
+		text-decoration: none !important;
     }
     a:visited {
-		text-decoration: none;
+		text-decoration: none !important;
     }
     a:hover {
 		cursor: pointer !important;
-		text-decoration: none;
+		text-decoration: none !important;
     }
     button {
 		all: unset;
@@ -129,7 +136,11 @@ const GlobalStyle = createGlobalStyle`
 
 
 
+textarea {
+	all: unset;
+	font-family: 'Open Sans', sans-serif;
 
+}
 
     input {
 		all: unset;
@@ -161,9 +172,10 @@ export default function Layout({ children }) {
 	return (
 		<React.Fragment>
 			<ThemeProvider theme={theme}>
+			<GlobalStyle  />
+
 			<Navigation />
 
-				<GlobalStyle  />
 				{children}
 				<Footer />
 			</ThemeProvider>
