@@ -7,21 +7,32 @@ import styled from 'styled-components';
 import { device } from '../device';
 import AuthorCard from '../components/AuthorCard';
 
+
 const Hero = styled.div`
 	width: 100%;
 	height: 500px;
 	background-color: ${props => props.theme.colors.white};
+	@media ${device.laptop} {
+		height: 100%;
+	}
 `;
 
 const HeroText = styled.h1`
 	padding-top: 100px;
 	padding-bottom: 100px;
-	color: ${props => props.theme.colors.red}`;
-
+	color: ${props => props.theme.colors.black};	
+	@media ${device.laptop} {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+`;
 const Page = styled.div`
 	display: flex;
 	flex-direction: row;
+	@media ${device.laptop} {
+		flex-direction: column;
 
+	}
 `;
 
 const Column = styled.div`
@@ -34,21 +45,27 @@ const ImageContainer = styled.img`
 	margin-top: -80px;
 	width: 100%;
 	@media ${device.laptop} {
-		height: 100px;
-	}
+		height: 200px;
+		margin-top: 0px;
 
+	}
 `;
 
 const Content = styled.div`
 	flex: 2;
+	@media ${device.laptop} {
+		flex: 1;
+
+	}
 `;
 
 const Markdown = styled.div`
 	margin-top: 80px;
+	@media ${device.laptop} {
+		margin-top: 30px;
+
+	}
 `;
-
-
-
 
 
 

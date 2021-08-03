@@ -35,7 +35,8 @@ const Column = styled.div`
 	margin: 40px;	
 	@media ${device.laptop} {
 		flex: 1;
-		margin: 24px;	
+		justify-content: center;
+		align-items: center;
 
 
 	}
@@ -50,6 +51,10 @@ const Input = styled.input`
 	margin-bottom: 32px;
 	padding-left: 20px;
 	font-size: 24px;
+	@media ${device.laptop} {
+		padding-left: 0px;
+	}
+	
 `;
 
 const TextArea = styled.textarea`
@@ -60,6 +65,9 @@ const TextArea = styled.textarea`
 	padding-left: 20px;
 	font-size: 24px;
 	padding-top: 20px;
+	@media ${device.laptop} {
+		padding-left: 0px;
+	}
 
 `;
 
@@ -68,10 +76,16 @@ const Button = styled.button`
 	background-color: ${props => props.theme.colors.yellow};
 	color:  ${props => props.theme.colors.orange};
 	text-align: center;
-	font-size: 32px;
+	font-size: 24px;
+	font-weight: 600;
 	width: 100%;
 	padding-left: 10px;
 	padding-right: 10px;
+	@media ${device.laptop} {
+		padding-left: 0px;
+		padding-right: 0px;
+
+	}
 `;
 
 const Label = styled.label`
@@ -98,11 +112,10 @@ const ContactForm = (props ) => {
 					<h2>Ota yhteyttä!</h2>
 					<h4>Voit kysyä meiltä mitä vain liittyen yhteiseen projektiimme.</h4>
 					<p>Vastaamme mielellämme tarjouspyyntöihin, sekä yhteistyöhaknkkeisiin. Lähetä rohkeasti viesti. <br/> <br/>Voit myös lähtettää meille sähköpostia:</p>
-					<AuthorCard 
-						name="Aleksanteri Heliövaara"
-						description="Make thinks happen, Co Founder"
-						email="aleksanteri@helau.io"
-					/>
+					<h5 style={{ marginBottom: "0px" }}>
+					aleksanteri@helau.io
+				</h5>
+				
 				</Column>
 				<Column>
 					<Form form method="post" action="https://getform.io/f/3c369d83-1968-4cb2-a847-807c9fc830c9" >
@@ -120,8 +133,7 @@ const ContactForm = (props ) => {
 							Viesti
     						<TextArea name="message" id="message" wrap="hard" />
 						</Label>
-							<Button type="submit">Lähetä</Button>
-							<Clear type="reset" value="Tyhjennä kaavake" />
+							<Button type="submit">Lähetä viesti</Button>
 					</ Form>
 				</Column>
 				</Content>

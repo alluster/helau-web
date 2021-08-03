@@ -19,7 +19,10 @@ const NavContainer = styled.div`
 	height: 160px;
 	top: 0;
 	background-color: white;
-
+	@media ${device.laptop} {
+		height: 80px;
+	}
+	
 `;
 
 
@@ -46,15 +49,16 @@ const ImageContainer = styled.div`
 		cursor: pointer;
 	}
 	@media ${device.laptop} {
-		height: 160px;
+		height: 80px;
+		padding-top: 25px;
 	}
 	
 `
 
 const OpenNav = styled.div`
-	top: 160px;
+	top: 80px;
 	min-height: 100vh;
-	background: rgba(255, 255, 255, 0.98);
+	background: white;
 	text-align: center;
 	padding-top: 50px;
 	z-index: 1002;
@@ -83,6 +87,9 @@ const BurgerContainer = styled.div`
 	width: 100%;
 	height: 160px;
 	justify-content: flex-end;
+	@media ${device.laptop} {
+		height: 80px;
+	}
 	
 
 `;
@@ -95,6 +102,10 @@ const BurgerContent = styled.div`
 	:hover {
 		cursor: pointer;
 	}
+	@media ${device.laptop} {
+		height: 80px;
+	}
+	
 `;
 
 
@@ -134,7 +145,7 @@ const Navigation = ({ className }) => {
 
 							<CustomLink to="/" >
 								<ImageContainer>
-									<StaticImage src={logo} height={30} width={123} quality={100}
+									<img src="/logo-dark.png" height={30} width={123} quality={100}
 									/>
 								</ImageContainer>
 							</CustomLink>

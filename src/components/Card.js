@@ -13,6 +13,7 @@ const CardContainer = styled(Link)`
 	margin: 1%;
 	@media ${device.laptop} {
 		width: 100%;
+		margin: 0px;
 
 	}
 `;
@@ -46,9 +47,11 @@ const LeadingText = styled.p`
 `;
 
 const Title = styled.h3`
-	margin-top: 24px;
 	color: ${props => props.theme.colors.black};
-
+	@media ${device.laptop} {
+		margin-top: -10px;
+	}
+	
 `;
 
 const Card = (props) => {

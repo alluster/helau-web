@@ -30,6 +30,8 @@ const HeroContent = styled.div `
 	height: 100%;
 	@media ${device.laptop} {
 		max-width: 100%;
+		padding-top: 20px;
+		padding-bottom: 20px;
 
     }
 `;

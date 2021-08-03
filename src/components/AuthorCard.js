@@ -9,7 +9,6 @@ const AuthorCard = ({ image, name, email, description }) => {
 		display: flex;
 		flex-direction: row;
 		font-family: 'Open Sans'
-		margin-right: 10px;
 		margin-top: 10px		
 		@media ${device.laptop} {
 			width: 100%;
@@ -29,6 +28,8 @@ const AuthorCard = ({ image, name, email, description }) => {
 		object-fit: cover;
 		align-self: center;
 		margin-right: 32px;
+		min-width: 100px;
+		min-height: 100px;
 	`;
 
 
