@@ -21,8 +21,8 @@ const CardGridColumn = styled.div`
 
 const IndexPage = ({ data }) => {
 	return (
-		<Layout >
-			<SEO title="Hello" description="World" image="/seo.jpeg" article="true"/>
+		<Layout page="home">
+			<SEO title="Helau Solutions Oy" description="Luomme moderneja digitaalisia kokemuksia avoimemman maailman puolesta." image="/seo.jpeg" article="false"/>
 
 			<HeroHome />
 			<Container>

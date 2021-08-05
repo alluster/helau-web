@@ -14,12 +14,13 @@ const Hero = styled.div`
 	background-color: ${props => props.theme.colors.white};
 	@media ${device.laptop} {
 		height: 100%;
+
 	}
 `;
 
 const HeroText = styled.h1`
 	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-bottom: 200px;
 	color: ${props => props.theme.colors.black};	
 	@media ${device.laptop} {
 		padding-top: 30px;
@@ -29,6 +30,11 @@ const HeroText = styled.h1`
 const Page = styled.div`
 	display: flex;
 	flex-direction: row;
+	max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+	padding-right: 32px;
 	@media ${device.laptop} {
 		flex-direction: column;
 
@@ -37,7 +43,7 @@ const Page = styled.div`
 
 const Column = styled.div`
 	flex: 1;
-	margin-right: 32px;
+	margin-right: 60px;
 	@media ${device.laptop} {
 		margin-right: 0px;
 
@@ -47,11 +53,11 @@ const Column = styled.div`
 const ImageContainer = styled.img`
 	object-fit: cover;
 	margin-top: -80px;
-	width: 100%;
 	@media ${device.laptop} {
 		height: 200px;
 		margin-top: 0px;
 		width: 100%;
+
 
 	}
 `;
@@ -65,7 +71,15 @@ const Content = styled.div`
 `;
 
 const Markdown = styled.div`
-	margin-top: 80px;
+	margin-top: -80px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+  
+  -webkit-hyphens: auto;
+	 -moz-hyphens: auto;
+		  hyphens: auto;
+	hyphens: auto;
+	max-width: 900px;
 	@media ${device.laptop} {
 		margin-top: 30px;
 
@@ -74,7 +88,10 @@ const Markdown = styled.div`
 
 
 
-const Contact = ({ data }) => {
+
+
+
+const About = ({ data }) => {
 	return (
 		<Layout>
 			<SEO
@@ -88,7 +105,6 @@ const Contact = ({ data }) => {
 					<HeroText>{data.contentfulPage.title}</HeroText>
 				</Container>
 			</Hero>
-			<Container>
 
 				<Page>
 					<Column>
@@ -105,15 +121,14 @@ const Contact = ({ data }) => {
 					</Content>
 
 				</Page>
-			</Container>
 
 		</Layout>
 	)
 }
-export default Contact
+export default About
 
-export const query = graphql`query ContactQuery {
-	contentfulPage(contentful_id: {eq: "52Oaaqah9yunIQ9spofcI"}) {
+export const query = graphql`query ServiceQuery {
+	contentfulPage(contentful_id: {eq: "3zC6OYsCKW1YGd2xjLi0di"}) {
 	  image {
 		file {
 		  url

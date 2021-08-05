@@ -1,3 +1,4 @@
+
 import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
@@ -13,29 +14,36 @@ import { Link } from 'gatsby';
 const logo = '../images/logo-dark.png'
 
 const NavContainer = styled.div`
-	position: relative;
+	position: absolute;
 	min-width: 100%;
 	z-index: 1000;
 	height: 160px;
 	top: 0;
-	background-color: white;
+	background-color: ${props => props.theme.colors.blue};
 	@media ${device.laptop} {
 		height: 80px;
+		position: relative;
+
 	}
+
 	
 `;
 
 
 const Icon = styled(FontAwesomeIcon)`
 	font-size: 22px;
-
+	color: white;
 	text-align: right;
 	margin-right: 10px;
 	color: ${props => props.theme.colors.white};
     :hover {
 		cursor: pointer;
-	}
 	
+	}
+	@media ${device.laptop} {
+
+	}
+
 	
 `;
 
@@ -53,8 +61,7 @@ const ImageContainer = styled.div`
 		height: 80px;
 	}
 	
-`;
-
+`
 const Image = styled.img`
 	max-width: 184px;
 	max-height: 35px;
@@ -85,6 +92,7 @@ const LinkTextMobile = styled.h2`
 	margin-top: 20px;
 	margin-bottom: 10px;
 	color: black !important;
+	
 
 
 `;
@@ -97,6 +105,7 @@ const BurgerContainer = styled.div`
 	width: 100%;
 	height: 160px;
 	justify-content: flex-end;
+
 	@media ${device.laptop} {
 		height: 80px;
 	}
@@ -134,13 +143,17 @@ const LinkText = styled.div`
 	 font-size: 24px;
 	 font-weight: 600;
 	 text-decoration: none !important;
+	 color: white;
 	 :hover {
 		 cursor: pointer;
 	 }
+	 @media ${device.laptop} {
+
+	}
 `;
 
 
-const Navigation = ({ className }) => {
+const NavigationHome = ({ className }) => {
 	const [navOpen, setNavOpen] = useState(false)
 
 
@@ -155,8 +168,7 @@ const Navigation = ({ className }) => {
 
 							<CustomLink to="/" >
 								<ImageContainer>
-									<Image src="/logo-dark.png" height={30} width={123} quality={100}
-									/>
+									<Image src="/logo-light.png" alt="Helau" />
 								</ImageContainer>
 							</CustomLink>
 
@@ -188,14 +200,14 @@ const Navigation = ({ className }) => {
 									!navOpen ?
 										<BurgerContent onClick={e => setNavOpen(true)} >
 
-											<Icon icon={faBars} style={{ color: "black" }} />
+											<Icon icon={faBars}  />
 											<LinkText>Menu</LinkText>
 										</BurgerContent>
 
 										:
 										<BurgerContent onClick={e => setNavOpen(false)}>
 
-											<Icon icon={faTimes} style={{ color: "black", zIndex: 10000 }} />
+											<Icon icon={faTimes} style={{ zIndex: 10000 }} />
 											<LinkText>Menu</LinkText>
 										</BurgerContent>
 
@@ -265,4 +277,4 @@ const Navigation = ({ className }) => {
 };
 
 
-export default Navigation;
+export default NavigationHome;

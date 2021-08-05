@@ -4,6 +4,7 @@ import Container from './Container';
 import { device } from '../device';
 import ClipLoader from "react-spinners/ClipLoader";
 import Overlay from './Overlay';
+import Typewriter from 'typewriter-effect';
 
 const HeroStyled = styled.div`
 	min-height: 100%;
@@ -25,13 +26,12 @@ const HeroContent = styled.div `
 	position: relative;
 	z-index: 999;
 	max-width: 70%;
-	justify-content: center;
-
+	justify-content: center;s
 	height: 100%;
 	@media ${device.laptop} {
 		max-width: 100%;
 		padding-top: 20px;
-		padding-bottom: 20px;
+		padding-bottom: 0px;
 
     }
 `;
@@ -39,6 +39,7 @@ const HeroContent = styled.div `
 
 const TextContainer = styled.div `
 	display: flex;
+	margin-top: 160px;
 	justify-content: center;
 	text-align: left;
 	flex-direction: column;
@@ -49,7 +50,7 @@ const TextContainer = styled.div `
 	@media ${device.laptop} {
 		flex: 1;
 		justify-content: center;
-
+		margin-top: 0px;
 	}	
 	`;
 
@@ -96,9 +97,16 @@ const HeroHome = ({title, ingress, image, children }) => {
 						
 						<TextContainer>
 							<Title>
-							<h5>Ajatella - tehdä - tarkkailla</h5>
+							<Typewriter
+  options={{
+    strings: ['Ajatella', 'Tehdä', 'Tarkkailla' ],
+    autoStart: true,
+    loop: true,
+  }}
+/>
+			
+							<h2>Luomme moderneja digitaalisia kokemuksia avoimemman maailman puolesta</h2>
 
-							Luomme moderneja digitaalisia kokemuksia avoimemman maailman puolesta.
 							
 							</Title>
 				

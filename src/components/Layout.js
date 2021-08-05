@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 import { device } from '../device';
+import NavigationHome from "./NavigationHome";
 
 const GlobalStyle = createGlobalStyle`
     body, html {
@@ -168,13 +169,16 @@ textarea {
     
     
 `;
-export default function Layout({ children }) {
+export default function Layout({ children, page }) {
 	return (
 		<React.Fragment>
 			<ThemeProvider theme={theme}>
 			<GlobalStyle  />
 
-			<Navigation />
+			{ 
+				page === "home" ?
+					<NavigationHome/> : <Navigation />
+			}
 
 				{children}
 				<Footer />

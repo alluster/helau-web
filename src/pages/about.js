@@ -38,6 +38,10 @@ const Page = styled.div`
 const Column = styled.div`
 	flex: 1;
 	margin-right: 60px;
+	@media ${device.laptop} {
+		margin-right: 0px;
+
+	}
 `;
 
 const ImageContainer = styled.img`

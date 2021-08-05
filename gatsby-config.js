@@ -6,12 +6,12 @@ require("dotenv").config({
   
   module.exports = {
 	siteMetadata: {
-		title: "Severus Snape",
-		titleTemplate: "%s · The Real Hero",
-		description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+		title: "Helau Solutions Oy",
+		titleTemplate: "%s · Digitaaliset palvelut",
+		description: "Luomme moderneja digitaalisia kokemuksia avoimemman maailman puolesta.",
 		siteUrl: process.env.SITE_URL, // No trailing slash allowed!
 		image: `${process.env.SITE_URL}/seo.jpeg`, // Path to your image you placed in the 'static' folder
-		twitterUsername: "@occlumency",
+		twitterUsername: "",
 	  },
   plugins: [
     {

@@ -12,6 +12,10 @@ const Footer = () => {
 		background-color: ${props => props.theme.colors.blue};
 		height: 100%;
 		margin-top: 150px;
+		@media ${device.laptop} {
+			margin-top: 0px;
+	
+		}
 	
 `;
 

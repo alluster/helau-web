@@ -6,9 +6,9 @@ import { device } from '../device';
 import AuthorCard from './AuthorCard';
 
 const Container = styled.div`
-	background-color: ${props => props.theme.colors.red};
+	background-color: ${props => props.theme.colors.white};
 	height: 100%;
-	color: ${props => props.theme.colors.yellow};
+	color: ${props => props.theme.colors.black};
 
 `;
 
@@ -20,7 +20,7 @@ const Content = styled.div`
 	flex-direction: row;
 	padding-top: 64px;
 	padding-bottom: 64px;
-	
+	align-items: center;
 	@media ${device.laptop} {
 		flex-direction: column;
 		text-align: center;
@@ -44,13 +44,15 @@ const Column = styled.div`
 
 
 const Input = styled.input`
-	border: 1px solid ${props => props.theme.colors.yellow};
-	height: 64px;
+	border: 1px solid ${props => props.theme.colors.linkGray};
+	height: 42px;
 	width: 100%;
 	margin-top: 16px;
 	margin-bottom: 32px;
 	padding-left: 20px;
-	font-size: 24px;
+	font-size: 18px;
+	border-radius: 4px;
+
 	@media ${device.laptop} {
 		padding-left: 0px;
 	}
@@ -58,9 +60,10 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-	border: 1px solid ${props => props.theme.colors.yellow};
+	border: 1px solid ${props => props.theme.colors.linkGray};
 	margin-top: 16px;
 	margin-bottom: 32px;
+	border-radius: 4px;
 	width: 100%;
 	padding-left: 20px;
 	font-size: 24px;
@@ -73,11 +76,13 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
 	height: 64px;
-	background-color: ${props => props.theme.colors.yellow};
-	color:  ${props => props.theme.colors.orange};
+	background-color: ${props => props.theme.colors.white};
+	border:4px solid ${props => props.theme.colors.blue};
+	color:  ${props => props.theme.colors.blue};
 	text-align: center;
 	font-size: 24px;
 	font-weight: 600;
+	border-radius: 8px;
 	width: 100%;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -89,7 +94,7 @@ const Button = styled.button`
 `;
 
 const Label = styled.label`
-	font-size: 24px;
+	font-size: 18px;
 `;
 
 const Form = styled.form`
@@ -109,8 +114,7 @@ const ContactForm = (props ) => {
 			<Content>
 
 				<Column>
-					<h2>Ota yhteyttä!</h2>
-					<h4>Voit kysyä meiltä mitä vain liittyen yhteiseen projektiimme.</h4>
+					<h3>Voit kysyä meiltä mitä vain liittyen yhteiseen projektiimme.</h3>
 					<p>Vastaamme mielellämme tarjouspyyntöihin, sekä yhteistyöhaknkkeisiin. Lähetä rohkeasti viesti. <br/> <br/>Voit myös lähtettää meille sähköpostia:</p>
 					<h5 style={{ marginBottom: "0px" }}>
 					aleksanteri@helau.io
