@@ -125,6 +125,7 @@ const LinkContainer = styled(Link)`
 	 display: flex;
 	 align-items: center;
 	 justify-content: flex-end;
+	 text-decoration: none;
 	 @media ${device.laptop} {
 		display: none;
  	}
@@ -134,9 +135,13 @@ const LinkText = styled.div`
 	 font-size: 24px;
 	 font-weight: 600;
 	 text-decoration: none !important;
+	 color: black;
 	 :hover {
 		 cursor: pointer;
 	 }
+	 @media ${device.laptop} {
+
+	}
 `;
 
 
@@ -169,8 +174,8 @@ const Navigation = ({ className }) => {
 							</LinkContainer>
 						</Col>
 						<Col xs={2}>
-							<LinkContainer style={{ textDecoration: 'none !important' }} to="/about">
-									<LinkText style={{ textDecoration: 'none' }}>Meistä</LinkText>
+							<LinkContainer to="/about">
+									<LinkText >Meistä</LinkText>
 
 							</LinkContainer>
 						</Col>
