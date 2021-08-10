@@ -73,7 +73,7 @@ const Image = styled.img`
 `;
 
 const OpenNav = styled.div`
-	top: 80px;
+	margin-top: 160px;
 	min-height: 100vh;
 	background: white;
 	text-align: center;
@@ -176,7 +176,7 @@ const NavigationHome = ({ className }) => {
 
 						</Col>
 						<Col xs={2}>
-							<LinkContainer to="/services">
+							<LinkContainer  to="/services">
 									<LinkText>Palvelut</LinkText>
 
 							</LinkContainer>
