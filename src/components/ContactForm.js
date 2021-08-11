@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-	max-width: 1200px;
+	max-width: 1600px;
 	margin-left:auto;
 	margin-right: auto;
 	display: flex;
@@ -117,7 +117,7 @@ const ContactForm = (props ) => {
 					<h3>Voit kysyä meiltä mitä vain liittyen yhteiseen projektiimme.</h3>
 					<p>Vastaamme mielellämme tarjouspyyntöihin, sekä yhteistyöhaknkkeisiin. Lähetä rohkeasti viesti. <br/> <br/>Voit myös lähtettää meille sähköpostia:</p>
 					<h5 style={{ marginBottom: "0px" }}>
-					aleksanteri@helau.io
+					info@helau.io
 				</h5>
 				
 				</Column>

@@ -124,8 +124,9 @@ const LinkContainer = styled(Link)`
 	 padding-left: 20px;
 	 display: flex;
 	 align-items: center;
-	 justify-content: flex-end;
 	 text-decoration: none;
+	 text-align: center;
+
 	 @media ${device.laptop} {
 		display: none;
  	}

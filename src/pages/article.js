@@ -47,7 +47,6 @@ const Column = styled.div`
 
 const ImageContainer = styled.img`
 	object-fit: cover;
-	margin-top: -80px;
 	width: 100%;
 	@media ${device.laptop} {
 		height: 200px;
@@ -59,15 +58,30 @@ const ImageContainer = styled.img`
 
 const Content = styled.div`
 	flex: 2;
+	background-color: white;
+	margin-left: -80px;
+	margin-top: 40px;
+	padding: 60px;
 	@media ${device.laptop} {
 		flex: 1;
-
+		margin-left: 0px;
+		margin-top: 0px;
+		padding: 0px;
 	}
 	
 `;
 
 const Markdown = styled.div`
-	margin-top: 80px;
+h3 {
+	margin-bottom: 60px;
+}
+
+@media ${device.laptop} {
+	h3 {
+		margin-bottom: 20px;
+	}
+
+}
 `;
 
 

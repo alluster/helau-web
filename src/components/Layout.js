@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h3 {
 		font-size: 45.23px;
-		line-height: 48px;
+		line-height: 60px;
 		margin-top: 24px;
 		margin-bottom: 24px;
 		font-weight: 600;
@@ -69,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h5 {
 		font-size: 22.62px;
-		line-height: 24px;
+		line-height: 32px;
 		margin-top: 16px;
 		margin-bottom: 16px;
 		font-weight: 600;
@@ -90,8 +90,8 @@ const GlobalStyle = createGlobalStyle`
 		 }
 	}
 	p {
-		font-size: 16px;
-		line-height: 24px;
+		font-size: 24px;
+    	line-height: 40px;
 		margin-top: 16px;
 		margin-bottom: 16px;
 		font-weight: 400;
@@ -177,7 +177,7 @@ export default function Layout({ children, page }) {
 
 			{ 
 				page === "home" ?
-					<NavigationHome/> : <Navigation />
+					<Navigation/> : <Navigation />
 			}
 
 				{children}

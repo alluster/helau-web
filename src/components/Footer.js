@@ -20,7 +20,7 @@ const Footer = () => {
 `;
 
 	const Content = styled.div`
-		max-width: 1200px;
+		max-width: 1600px;
 		margin-left:auto;
 		margin-right: auto;
 		display: flex;
@@ -73,9 +73,7 @@ const Footer = () => {
 					<p>Ristolantie 4  1krs</p>
 					<p>FIN-00320 Helsinki</p>
 					<h5>Ota yhteyttä</h5>
-					<p>Aleksanteri Heliövaara</p>
-					<p>aleksanteri@helau.io</p>
-					<p>+358442360304</p>
+					<p>info@helau.io</p>
 				</Column1>
 				<div></div>
 				<Column2 >

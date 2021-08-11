@@ -15,6 +15,7 @@ require("dotenv").config({
 	  },
   plugins: [
     {
+		
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
@@ -23,8 +24,9 @@ require("dotenv").config({
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-gatsby-cloud",
-    "gatsby-plugin-image",
-    {
+	"gatsby-plugin-image",
+	"gatsby-plugin-scroll-reveal",
+	{
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "G-B20WRHEY1Y",

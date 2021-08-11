@@ -8,10 +8,9 @@ import Typewriter from 'typewriter-effect';
 
 const HeroStyled = styled.div`
 	min-height: 100%;
-	height: 100%;
 	z-index: -1;
 	background-position: center;
-	background-color: ${props => props.theme.colors.blue};
+	background-color: ${props => props.theme.colors.white};
 	@media ${device.laptop} {
 		height: 100%;
     }
@@ -22,56 +21,72 @@ const HeroContent = styled.div `
 	padding-top: 50px;
 	padding-bottom: 50px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	position: relative;
 	z-index: 999;
-	max-width: 70%;
-	justify-content: center;s
+	justify-content: center;
 	height: 100%;
 	@media ${device.laptop} {
 		max-width: 100%;
 		padding-top: 20px;
 		padding-bottom: 0px;
-
+		flex-direction: column-reverse;
     }
 `;
 
 
 const TextContainer = styled.div `
 	display: flex;
-	margin-top: 160px;
+	margin: 1%;
+	flex: 2;
 	justify-content: center;
 	text-align: left;
 	flex-direction: column;
-	justify-content: center;
 	line-break: normal;
-	align-items: center;
+	width: 48%;
 
 	@media ${device.laptop} {
 		flex: 1;
 		justify-content: center;
 		margin-top: 0px;
+		width: 100%;
 	}	
 	`;
 
 
 
 const Title = styled.h1`
-	
-	color: ${props => props.theme.colors.yellow};
-
-    font-size:  ${props => props.theme.fontSize.h1}
+	color: ${props => props.theme.colors.black};
+	hyphens: auto;
     @media ${device.laptop} {
-	
+		font-size: 40px;
+		margin-top: 40px;
 		hyphens: auto;
 
 
 	}	
 `;
+const ImageContainer = styled.div`
+	margin: 1%;
+	width: 48%;
+	flex: 2;
+	height: 1000px;
+	@media ${device.laptop} {
+		height: 300px;
+		flex: 1;
+		width: 100%;
+
+
+	}	
+`;
+
+const Image = styled.img`
+	height: 100%;
+	object-fit: cover;
+`;
 
 const Ingress = styled.p `
-	font-size: 22px;
-    color: white;
+    color: black;
     font-weight: 300 !important;
 	letter-spacing: 0.6px;
 	margin-top: 25px;
@@ -88,7 +103,7 @@ const Ingress = styled.p `
 
 
 
-const HeroHome = ({title, ingress, image, children }) => {
+const HeroHome = () => {
     return(
         <HeroStyled >
 				<Container>
@@ -97,25 +112,23 @@ const HeroHome = ({title, ingress, image, children }) => {
 						
 						<TextContainer>
 							<Title>
-							<Typewriter
-  options={{
-    strings: ['Ajatella', 'Tehdä', 'Tarkkailla' ],
-    autoStart: true,
-    loop: true,
-  }}
-/>
-			
-							<h2>Luomme moderneja digitaalisia kokemuksia avoimemman maailman puolesta</h2>
-
-							
+								<Typewriter
+									options={{
+										strings: ['React.js', 'UX Design', 'Contentful', 'SQL', 'React Native', 'UI Design', 'Service Design', 'Python' ],
+										autoStart: true,
+										loop: true,
+									}}
+								/>
 							</Title>
-				
 							<Ingress>
-								{ingress}
+							<h2 style={{ marginBottom: '40px'}}>Kokemuksia avoimemman maailman puolesta.</h2>
+
+								<h5 style={{ fontWeight: 400 }}>Helau Solutions Oy on Helsinkiläinen projektiluontoiseen digikehitykseen keskittynyt palvelutoimisto. Suunnittelemme ja toteutamme digitaaliset palvelut monimutkaisiin tarpeisiin.</h5>
 							</Ingress>
-							{children}
 						</TextContainer>
-			
+						<ImageContainer>
+							<Image src="/oodi.jpeg"/>
+						</ImageContainer>
 					</HeroContent>
 					</Container>
 
