@@ -20,7 +20,7 @@ const CardContainer = styled(Link)`
 
 const CardImageContainer = styled.img`
 	height: 600px;
-	background-color: green;
+	background-color: ${props => props.theme.colors.white};
 	object-fit: cover !important;
 	@media ${device.laptop} {
 		height: 200px;
