@@ -71,6 +71,10 @@ const Content = styled.div`
 	
 `;
 
+const Divider = styled.div `
+	height: 100px;
+`;
+
 const Markdown = styled.div`
 h3 {
 	margin-bottom: 60px;
@@ -116,6 +120,7 @@ const Article = ({ data }) => {
 								__html: data.contentfulArticle.content.childMarkdownRemark.html,
 							}}
 						/>
+						<Divider />
 						<AuthorCard
 							name={data.contentfulArticle.author.personName}
 							description={data.contentfulArticle.author.personDesxription}

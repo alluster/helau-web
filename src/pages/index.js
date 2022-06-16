@@ -108,7 +108,7 @@ export const query = graphql`query MyQuery {
 		}
 		contentfulAuthor(contentful_id: {eq: "XTQ8ZZ7WYZR89yVvWcOT9"}) {
 			personEmail
-			personDesxription
+			personDescription
 			personImage {
 			  file {
 				url
