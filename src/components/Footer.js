@@ -68,10 +68,10 @@ const Footer = () => {
 			<ContactForm />
 			<Content>
 				<Column1>
-					<h5>Osoitetiedot</h5>
+					{/* <h5>Osoitetiedot</h5>
 					<p>Helau Solutions Oy </p>
 					<p>Ristolantie 4  1krs</p>
-					<p>FIN-00320 Helsinki</p>
+					<p>FIN-00320 Helsinki</p> */}
 					<h5>Ota yhteyttä</h5>
 					<p>info@helau.io</p>
 				</Column1>
