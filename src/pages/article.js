@@ -79,6 +79,10 @@ const Markdown = styled.div`
 h3 {
 	margin-bottom: 60px;
 }
+li {
+	font-size: 24px;
+	line-height: 40px;
+}
 
 @media ${device.laptop} {
 	h3 {
