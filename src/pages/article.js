@@ -98,7 +98,10 @@ li {
 	h3 {
 		margin-bottom: 20px;
 	}
-
+	li {
+		font-size: 16px;
+		line-height: 24px;
+	}
 }
 `;
 

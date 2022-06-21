@@ -85,7 +85,10 @@ const Markdown = styled.div`
 	max-width: 900px;
 	@media ${device.laptop} {
 		margin-top: 30px;
-
+		li {
+			font-size: 16px;
+			line-height: 24px;
+		}
 	}
 `;
 
