@@ -26,6 +26,16 @@ const HeroText = styled.h1`
 	}
 `;
 
+const LeadingText = styled.h3`
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: ${props => props.theme.colors.black};	
+	@media ${device.laptop} {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+`;
+
 const Page = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -109,6 +119,7 @@ const Article = ({ data }) => {
 			<Hero>
 				<Container>
 					<HeroText>{data.contentfulArticle.title}</HeroText>
+					<LeadingText>{data.contentfulArticle.LeadingText}</LeadingText>
 				</Container>
 			</Hero>
 			<Container>
