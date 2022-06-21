@@ -18,27 +18,29 @@ const Hero = styled.div`
 
 const HeroText = styled.h1`
 	padding-top: 100px;
-	padding-bottom: 100px;
-	color: ${props => props.theme.colors.black};	
-	@media ${device.laptop} {
-		padding-top: 30px;
-		padding-bottom: 30px;
-	}
-`;
-
-const LeadingText = styled.h3`
-	padding-top: 30px;
 	padding-bottom: 30px;
 	color: ${props => props.theme.colors.black};	
 	@media ${device.laptop} {
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 0px;
+	}
+`;
+
+const LeadingText = styled.h3`
+	padding-top: 10px;
+	padding-bottom: 30px;
+	color: ${props => props.theme.colors.black};	
+	@media ${device.laptop} {
+		padding-top: 0px;
+		padding-bottom: 0px;
 	}
 `;
 
 const Page = styled.div`
 	display: flex;
 	flex-direction: row;
+	margin-top: 60px;
+
 	@media ${device.laptop} {
 		flex-direction: column;
 
@@ -122,7 +124,7 @@ const Article = ({ data }) => {
 			<Hero>
 				<Container>
 					<HeroText>{data.contentfulArticle.title}</HeroText>
-					<LeadingText>{data.contentfulArticle.LeadingText}</LeadingText>
+					<LeadingText>{data.contentfulArticle.leadingText}</LeadingText>
 				</Container>
 			</Hero>
 			<Container>
