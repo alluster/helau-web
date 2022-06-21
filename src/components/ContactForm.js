@@ -114,7 +114,7 @@ const ContactForm = (props ) => {
 			<Content>
 
 				<Column>
-					<h3>Voit kysyä meiltä mitä vain liittyen yhteiseen projektiimme.</h3>
+					<h3>Ota yhteyttä!</h3>
 					<p>Vastaamme mielellämme tarjouspyyntöihin, sekä yhteistyöhaknkkeisiin. Lähetä rohkeasti viesti. <br/> <br/>Voit myös lähtettää meille sähköpostia:</p>
 					<h5 style={{ marginBottom: "0px" }}>
 					info@helau.io

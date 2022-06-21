@@ -114,7 +114,7 @@ const HeroHome = () => {
 							<Title>
 								<Typewriter
 									options={{
-										strings: ['React.js', 'UX Design', 'Contentful', 'SQL', 'React Native', 'UI Design', 'Service Design', 'Python' ],
+										strings: ['React.js', 'UX Design', 'Contentful', 'Wordpress', 'SQL', 'React Native', 'UI Design', 'Service Design', 'Python', 'Gatsby.js' ],
 										autoStart: true,
 										loop: true,
 									}}
