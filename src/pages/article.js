@@ -7,6 +7,70 @@ import styled from 'styled-components';
 import { device } from '../device';
 import AuthorCard from '../components/AuthorCard';
 
+
+
+// form styles 
+
+const Input = styled.input`
+	border: 1px solid ${props => props.theme.colors.linkGray};
+	height: 42px;
+	width: 100%;
+	margin-top: 16px;
+	margin-bottom: 32px;
+	padding-left: 20px;
+	font-size: 18px;
+	border-radius: 4px;
+
+	@media ${device.laptop} {
+		padding-left: 0px;
+	}
+	
+`;
+
+const TextArea = styled.textarea`
+	border: 1px solid ${props => props.theme.colors.linkGray};
+	margin-top: 16px;
+	margin-bottom: 32px;
+	border-radius: 4px;
+	width: 100%;
+	padding-left: 20px;
+	font-size: 24px;
+	padding-top: 20px;
+	@media ${device.laptop} {
+		padding-left: 0px;
+	}
+
+`;
+
+const Button = styled.button`
+	height: 64px;
+	background-color: ${props => props.theme.colors.white};
+	border:4px solid ${props => props.theme.colors.blue};
+	color:  ${props => props.theme.colors.blue};
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	border-radius: 8px;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	@media ${device.laptop} {
+		padding-left: 0px;
+		padding-right: 0px;
+
+	}
+`;
+
+const Label = styled.label`
+	font-size: 18px;
+`;
+
+
+
+
+
+// form styles
+
 const Hero = styled.div`
 	width: 100%;
 	height: 500px;
@@ -140,6 +204,22 @@ const Article = ({ data }) => {
 								__html: data.contentfulArticle.content.childMarkdownRemark.html,
 							}}
 						/>
+					<Divider />
+						<h3>Haluatko kuulla lisää?</h3>
+						<p>Lähetä meille viesti niin otamme heti yhteyttä!</p>
+					<form form method="post" action="https://getform.io/f/3c369d83-1968-4cb2-a847-807c9fc830c9" >
+				
+						<Label>
+							Email osoitteesi
+   							 <Input type="email" name="email" id="email" />
+						</Label>
+				
+						<Label>
+							Viesti
+    						<TextArea name="message" id="message" wrap="hard" />
+						</Label>
+							<Button type="submit">Lähetä viesti</Button>
+					</form>
 						<Divider />
 						<AuthorCard
 							name={data.contentfulArticle.author.personName}
