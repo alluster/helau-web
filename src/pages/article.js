@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
@@ -73,7 +73,7 @@ const Label = styled.label`
 
 const Hero = styled.div`
 	width: 100%;
-	height: 500px;
+	height: 100%;
 	background-color: ${props => props.theme.colors.white};
 	@media ${device.laptop} {
 		height: 100%;
@@ -91,8 +91,8 @@ const HeroText = styled.h1`
 `;
 
 const LeadingText = styled.h3`
-	padding-top: 10px;
-	padding-bottom: 30px;
+	margin-top: 10px;
+	margin-bottom: 30px;
 	color: ${props => props.theme.colors.black};	
 	@media ${device.laptop} {
 		padding-top: 0px;
@@ -195,7 +195,7 @@ const Article = ({ data }) => {
 
 				<Page>
 					<Column>
-					<ImageContainer src={data.contentfulArticle.image.file.url} />
+						<ImageContainer src={data.contentfulArticle.image.file.url} />
 
 					</Column>
 					<Content>
@@ -204,22 +204,20 @@ const Article = ({ data }) => {
 								__html: data.contentfulArticle.content.childMarkdownRemark.html,
 							}}
 						/>
-					<Divider />
+						<Divider />
 						<h3>Haluatko kuulla lisää?</h3>
 						<p>Lähetä meille viesti niin otamme heti yhteyttä!</p>
-					<form form method="post" action="https://getform.io/f/3c369d83-1968-4cb2-a847-807c9fc830c9" >
-				
-						<Label>
+						<form form method="post" action="https://getform.io/f/3c369d83-1968-4cb2-a847-807c9fc830c9" >
+							<Label>
 							Email osoitteesi
-   							 <Input type="email" name="email" id="email" />
-						</Label>
-				
-						<Label>
-							Viesti
-    						<TextArea name="message" id="message" wrap="hard" />
-						</Label>
+								<Input type="email" name="email" id="email" />
+							</Label>
+							<Label>
+								Viesti
+								<TextArea name="message" id="message" wrap="hard" />
+							</Label>
 							<Button type="submit">Lähetä viesti</Button>
-					</form>
+						</form>
 						<Divider />
 						<AuthorCard
 							name={data.contentfulArticle.author.personName}
@@ -233,9 +231,9 @@ const Article = ({ data }) => {
 			</Container>
 
 		</Layout>
-	)
-}
-export default Article
+	);
+};
+export default Article;
 
 export const query = graphql`query ($slug: String) {
 	
@@ -271,6 +269,6 @@ export const query = graphql`query ($slug: String) {
 			personName
 		}
 		}
-  }`
+  }`;
 
 

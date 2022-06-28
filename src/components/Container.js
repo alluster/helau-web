@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { device } from '../device';
 
 const Wrapper = styled.div`
-    max-width: 1600px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 32px;
@@ -19,19 +19,19 @@ const Wrapper = styled.div`
 
 
 const Container = ({ children, className }) => {
-    return(
-        <Wrapper className={className}>
-            {children}
-        </Wrapper>
-    );
+	return(
+		<Wrapper className={className}>
+			{children}
+		</Wrapper>
+	);
 };
 
- Container.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
-        PropTypes.string
-    ])
- }
+Container.propTypes = {
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node,
+		PropTypes.string
+	])
+};
 
 export default Container;

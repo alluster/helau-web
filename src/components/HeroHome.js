@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from './Container';
 import { device } from '../device';
-import ClipLoader from "react-spinners/ClipLoader";
-import Overlay from './Overlay';
 import Typewriter from 'typewriter-effect';
 
 const HeroStyled = styled.div`
@@ -104,40 +102,40 @@ const Ingress = styled.p `
 
 
 const HeroHome = () => {
-    return(
-        <HeroStyled >
-				<Container>
+	return(
+		<HeroStyled >
+			<Container>
 
-					<HeroContent>
+				<HeroContent>
 						
-						<TextContainer>
-							<Title>
-								<Typewriter
-									options={{
-										strings: ['React.js', 'UX Design', 'Contentful', 'Wordpress', 'SQL', 'React Native', 'UI Design', 'Service Design', 'Python', 'Gatsby.js' ],
-										autoStart: true,
-										loop: true,
-									}}
-								/>
-							</Title>
-							<Ingress>
+					<TextContainer>
+						<Title>
+							<Typewriter
+								options={{
+									strings: ['React.js', 'UX Design', 'Contentful', 'Wordpress', 'SQL', 'React Native', 'UI Design', 'Service Design', 'Python', 'Gatsby.js' ],
+									autoStart: true,
+									loop: true,
+								}}
+							/>
+						</Title>
+						<Ingress>
 							<h2 style={{ marginBottom: '40px'}}>Kokemuksia avoimemman maailman puolesta.</h2>
 
-								<h5 style={{ fontWeight: 400 }}>Helau Solutions Oy on Helsinkiläinen projektiluontoiseen digikehitykseen keskittynyt palvelutoimisto. Suunnittelemme ja toteutamme digitaaliset palvelut monimutkaisiin tarpeisiin.</h5>
-							</Ingress>
-						</TextContainer>
-						<ImageContainer>
-							<Image src="/oodi.jpeg"/>
-						</ImageContainer>
-					</HeroContent>
-					</Container>
+							<h5 style={{ fontWeight: 400 }}>Helau Solutions Oy on Helsinkiläinen projektiluontoiseen digikehitykseen keskittynyt palvelutoimisto. Suunnittelemme ja toteutamme digitaaliset palvelut monimutkaisiin tarpeisiin.</h5>
+						</Ingress>
+					</TextContainer>
+					<ImageContainer>
+						<Image src="/oodi.jpeg"/>
+					</ImageContainer>
+				</HeroContent>
+			</Container>
 
 				
-				{/* <Overlay themeColor="Brand" /> */}
-        </HeroStyled>
+			{/* <Overlay themeColor="Brand" /> */}
+		</HeroStyled>
 		
         
-    );
+	);
 };
 
 
