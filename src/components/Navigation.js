@@ -1,16 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
 import { Row, Col } from 'react-flexbox-grid';
-import Button from './Button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { device } from '../device';
 import CustomLink from './CustomLink';
-import { StaticImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby';
 
-const logo = '../images/logo-dark.png'
+const logo = '../images/logo-dark.png';
 
 const NavContainer = styled.div`
 	position: relative;
@@ -58,8 +56,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
 	max-width: 184px;
 	max-height: 35px;
-	width: auto;
-	height: auto;
+
 	@media ${device.laptop} {
 		height: 20px;
 	}
@@ -147,7 +144,7 @@ const LinkText = styled.div`
 
 
 const Navigation = ({ className }) => {
-	const [navOpen, setNavOpen] = useState(false)
+	const [navOpen, setNavOpen] = useState(false);
 
 
 
@@ -161,7 +158,7 @@ const Navigation = ({ className }) => {
 
 							<CustomLink to="/" >
 								<ImageContainer>
-									<Image src="/logo-dark.png" height={30} width={123} quality={100}
+									<Image src="/logo-dark.svg" height={30} width={123} quality={100}
 									/>
 								</ImageContainer>
 							</CustomLink>
@@ -170,13 +167,13 @@ const Navigation = ({ className }) => {
 						</Col>
 						<Col xs={2}>
 							<LinkContainer to="/services">
-									<LinkText>Palvelut</LinkText>
+								<LinkText>Palvelut</LinkText>
 
 							</LinkContainer>
 						</Col>
 						<Col xs={2}>
 							<LinkContainer to="/about">
-									<LinkText >Meistä</LinkText>
+								<LinkText >Meistä</LinkText>
 
 							</LinkContainer>
 						</Col>
@@ -194,14 +191,14 @@ const Navigation = ({ className }) => {
 									!navOpen ?
 										<BurgerContent onClick={e => setNavOpen(true)} >
 
-											<Icon icon={faBars} style={{ color: "black" }} />
+											<Icon icon={faBars} style={{ color: 'black' }} />
 											<LinkText>Menu</LinkText>
 										</BurgerContent>
 
 										:
 										<BurgerContent onClick={e => setNavOpen(false)}>
 
-											<Icon icon={faTimes} style={{ color: "black", zIndex: 10000 }} />
+											<Icon icon={faTimes} style={{ color: 'black', zIndex: 10000 }} />
 											<LinkText>Menu</LinkText>
 										</BurgerContent>
 
@@ -228,17 +225,17 @@ const Navigation = ({ className }) => {
 							<LinkTextMobile onClick={() => setNavOpen(false)} >
 								<CustomLink to="/services" >
 									Palvelut
-									</CustomLink>
+								</CustomLink>
 							</LinkTextMobile>
 							<LinkTextMobile onClick={() => setNavOpen(false)} >
 								<CustomLink to="/about">
 									Meistä
-									</CustomLink>
+								</CustomLink>
 							</LinkTextMobile>
 							<LinkTextMobile onClick={() => setNavOpen(false)} >
 								<CustomLink to="/contact">
 									Yhteystiedot
-									</CustomLink>
+								</CustomLink>
 							</LinkTextMobile>
 
 							{/* {

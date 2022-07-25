@@ -1,11 +1,10 @@
-import React from "react"
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from '../theme';
-import Navigation from "./Navigation";
-import Footer from "./Footer";
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 import { device } from '../device';
-import NavigationHome from "./NavigationHome";
 
 const GlobalStyle = createGlobalStyle`
     body, html {
@@ -30,8 +29,9 @@ const GlobalStyle = createGlobalStyle`
 		margin-bottom: 24px;
 		font-weight: 600;
 		@media ${device.tablet} {
-			font-size: 28.8px;
-			line-height: 40px;
+			font-size: 40.8px;
+			line-height: 50px;
+			margin-bottom: 0px;
 		 }
     }
     h2 {
@@ -43,6 +43,8 @@ const GlobalStyle = createGlobalStyle`
 		@media ${device.tablet} {
 			font-size: 25.63px;
 			line-height: 32px;
+			margin-bottom: 0px;
+
 		 }
     }
     h3 {
@@ -54,6 +56,8 @@ const GlobalStyle = createGlobalStyle`
 		@media ${device.tablet} {
 			font-size: 22.78px;
 			line-height: 32px;
+			margin-bottom: 0px;
+
 		 }
     }
     h4 {
@@ -65,6 +69,8 @@ const GlobalStyle = createGlobalStyle`
 		@media ${device.tablet} {
 			font-size: 20.25px;
 			line-height: 24px;
+			margin-bottom: 0px;
+
 		 }
     }
     h5 {
@@ -173,16 +179,16 @@ export default function Layout({ children, page }) {
 	return (
 		<React.Fragment>
 			<ThemeProvider theme={theme}>
-			<GlobalStyle  />
+				<GlobalStyle  />
 
-			{ 
-				page === "home" ?
-					<Navigation/> : <Navigation />
-			}
+				{ 
+					page === 'home' ?
+						<Navigation/> : <Navigation />
+				}
 
 				{children}
 				<Footer />
 			</ThemeProvider>
 		</React.Fragment>
-	)
+	);
 }

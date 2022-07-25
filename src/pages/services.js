@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/Layout';
-import Container from '../components/Container';
 import styled from 'styled-components';
 import { device } from '../device';
-import AuthorCard from '../components/AuthorCard';
 
 
 const Hero = styled.div`
@@ -24,7 +22,7 @@ const HeroText = styled.h1`
 	color: ${props => props.theme.colors.black};	
 	@media ${device.laptop} {
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 0px;
 	}
 `;
 const Page = styled.div`
@@ -52,7 +50,7 @@ const Column = styled.div`
 
 const ImageContainer = styled.img`
 	object-fit: cover;
-	margin-top: -80px;
+	margin-top: 80px;
 	@media ${device.laptop} {
 		height: 200px;
 		margin-top: 0px;
@@ -106,32 +104,29 @@ const About = ({ data }) => {
 				image={data.contentfulPage.image.file.url}
 				article="true"
 			/>
-			<Hero>
-				<Container>
-					<HeroText>{data.contentfulPage.title}</HeroText>
-				</Container>
-			</Hero>
-
-				<Page>
-					<Column>
+		
+			<Page>
+				<Column>
 					<ImageContainer src={data.contentfulPage.image.file.url} />
 
-					</Column>
-					<Content>
-						<Markdown
-							dangerouslySetInnerHTML={{
-								__html: data.contentfulPage.content.childMarkdownRemark.html,
-							}}
-						/>
-						
-					</Content>
+				</Column>
+				<Content>
+					<HeroText>{data.contentfulPage.title}</HeroText>
 
-				</Page>
+					<Markdown
+						dangerouslySetInnerHTML={{
+							__html: data.contentfulPage.content.childMarkdownRemark.html,
+						}}
+					/>
+						
+				</Content>
+
+			</Page>
 
 		</Layout>
-	)
-}
-export default About
+	);
+};
+export default About;
 
 export const query = graphql`query ServiceQuery {
 	contentfulPage(contentful_id: {eq: "3zC6OYsCKW1YGd2xjLi0di"}) {
@@ -151,6 +146,6 @@ export const query = graphql`query ServiceQuery {
 	  }
 	}
   }
-  `
+  `;
 
 

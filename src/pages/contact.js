@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import styled from 'styled-components';
 import { device } from '../device';
-import AuthorCard from '../components/AuthorCard';
 
 
 const Hero = styled.div`
@@ -46,7 +45,7 @@ const Column = styled.div`
 
 const ImageContainer = styled.img`
 	object-fit: cover;
-	margin-top: -80px;
+	margin-top: 80px;
 	width: 100%;
 	@media ${device.laptop} {
 		height: 200px;
@@ -83,19 +82,16 @@ const Contact = ({ data }) => {
 				image={data.contentfulPage.image.file.url}
 				article="true"
 			/>
-			<Hero>
-				<Container>
-					<HeroText>{data.contentfulPage.title}</HeroText>
-				</Container>
-			</Hero>
+		
 			<Container>
 
 				<Page>
 					<Column>
-					<ImageContainer src={data.contentfulPage.image.file.url} />
+						<ImageContainer src={data.contentfulPage.image.file.url} />
 
 					</Column>
 					<Content>
+
 						<Markdown
 							dangerouslySetInnerHTML={{
 								__html: data.contentfulPage.content.childMarkdownRemark.html,
@@ -108,9 +104,9 @@ const Contact = ({ data }) => {
 			</Container>
 
 		</Layout>
-	)
-}
-export default Contact
+	);
+};
+export default Contact;
 
 export const query = graphql`query ContactQuery {
 	contentfulPage(contentful_id: {eq: "52Oaaqah9yunIQ9spofcI"}) {
@@ -130,6 +126,6 @@ export const query = graphql`query ContactQuery {
 	  }
 	}
   }
-  `
+  `;
 
 

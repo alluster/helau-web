@@ -1,12 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 import Layout from '../components/Layout';
-import HeroHome from '../components/HeroHome';
-import { Link, graphql } from 'gatsby';
-import Container from "../components/Container";
-import styled from "styled-components";
+import { graphql } from 'gatsby';
+import Container from '../components/Container';
 import SEO from '../components/seo';
-import ContactForm from "../components/ContactForm";
-import CardGrid from "../components/CardGrid";
+import CardGrid from '../components/CardGrid';
 
 
 
@@ -19,10 +16,10 @@ const Work = ({ data }) => {
 			</Container>
 
 		</Layout>
-	)
-}
+	);
+};
 
-export default Work
+export default Work;
 
 export const query = graphql`query WorkQuery {
 	allContentfulArticle
@@ -43,4 +40,4 @@ export const query = graphql`query WorkQuery {
 			}
 		}
 		
-	}`
+	}`;

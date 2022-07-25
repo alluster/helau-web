@@ -1,12 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 import Layout from '../components/Layout';
 import HeroHome from '../components/HeroHome';
-import { Link, graphql } from 'gatsby';
-import Container from "../components/Container";
-import styled from "styled-components";
+import { graphql } from 'gatsby';
+import Container from '../components/Container';
+import styled from 'styled-components';
 import SEO from '../components/seo';
-import ContactForm from "../components/ContactForm";
-import CardGrid from "../components/CardGrid";
+import CardGrid from '../components/CardGrid';
 
 
 const CardGridColumn = styled.div`
@@ -72,10 +71,10 @@ const IndexPage = ({ data }) => {
 			</Container>
 
 		</Layout>
-	)
-}
+	);
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`query MyQuery {
 	allContentfulArticle
@@ -115,4 +114,4 @@ export const query = graphql`query MyQuery {
 			  }
 			}
 		  }
-	}`
+	}`;
